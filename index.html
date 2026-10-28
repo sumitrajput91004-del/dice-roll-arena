@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="game">
+        <h1>🎲 Dice Roll Arena</h1>
+        <p class="subtitle">Roll the dice. Test your luck!</p>
+
+        <div class="dice-container">
+            <div class="die" id="die1" aria-label="First die">1</div>
+            <div class="die" id="die2" aria-label="Second die">1</div>
+        </div>
+
+        <h2 id="result" aria-live="polite">Ready to roll?</h2>
+        <p id="total">Total: —</p>
+
+        <div class="buttons">
+            <button id="rollOne">Roll One Die</button>
+            <button id="rollTwo">Roll Two Dice</button>
+            <button id="soundToggle">🔊 Sound: On</button>
+        </div>
+
+        <section class="history-section">
+            <h2>Recent Rolls</h2>
+            <ol id="history">
+                <li>Your rolls will appear here.</li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>

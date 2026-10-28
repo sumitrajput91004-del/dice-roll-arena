@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #10152d, #25204a);
+}
+
+.game {
+    width: 100%;
+    max-width: 600px;
+    padding: 32px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: clamp(28px, 6vw, 42px);
+}
+
+.subtitle {
+    color: #c8cbe0;
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 32px 0;
+}
+
+.die {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    padding: 17px;
+    background: #fff9e8;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pip {
+    width: 12px;
+    height: 12px;
+    align-self: center;
+    justify-self: center;
+    background: #25204a;
+    border-radius: 50%;
+}
+
+.hidden {
+    display: none;
+}
+
+.rolling {
+    animation: shake 0.12s infinite alternate;
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(-8deg) scale(0.95);
+    }
+
+    to {
+        transform: rotate(8deg) scale(1.05);
+    }
+}
+
+#result {
+    font-size: 24px;
+}
+
+#total {
+    color: #d9d6ff;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+button {
+    padding: 13px 17px;
+    border: none;
+    border-radius: 12px;
+    background: #a99aff;
+    color: #17132e;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #c5bbff;
+}
+
+#soundToggle {
+    background: #b9f3df;
+}
+
+#soundToggle:hover {
+    background: #d0ffed;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+.history-section {
+    margin-top: 28px;
+    text-align: left;
+}
+
+.history-section h2 {
+    text-align: center;
+}
+
+#history {
+    padding-left: 28px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 450px) {
+    body {
+        padding: 12px;
+    }
+
+    .game {
+        padding: 24px 14px;
+    }
+
+    .die {
+        width: 82px;
+        height: 82px;
+        padding: 13px;
+        gap: 3px;
+    }
+
+    .pip {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dice-container {
+        gap: 14px;
+    }
+}
